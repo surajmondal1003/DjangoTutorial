@@ -1,0 +1,30 @@
+{% extends 'first_app/base.html' %}
+{% block body %}
+   <title>Projects</title>
+
+<div class="container container mt-4 mb-5">
+    <hr class="bg-dark mb-4 w-25">
+  <h1 class="display-4 text-center">This is projects page</h1>
+  {% if access_record %}
+    <table class="table">
+        <thead class="table-primary">
+            <th>Site Name</th>
+            <th>Date</th>
+        </thead>
+            {% for acc in access_record %}
+
+        <tbody>
+            <tr class="table-success">
+                <td>{{ acc.name }}</td>
+                <td>{{ acc.date }}</td>
+
+            </tr>
+
+        </tbody>
+            {% endfor %}
+    </table>
+        {% else %}
+        <p>No results found</p>
+        {% endif %}
+</div>
+{% endblock %}

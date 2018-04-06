@@ -1,0 +1,23 @@
+{% extends 'first_app/base.html' %}
+{% block body %}
+
+<html>
+<head>
+
+  <title>My Help Page</title>
+
+</head>
+<body>
+<div class="container container mt-4 mb-5">
+    <hr class="bg-dark mb-4 w-25">
+  <h3 class="display-4 text-center" >{{ page_name | title }}</h3>
+  <h3 class="display-4 text-center" >{{ page_name | upper }}</h3>
+  <h3 class="display-4 text-center" >{{ number | add:"5" }}</h3>
+  <h3 class="display-4 text-center" >{{ page_name | cut:"help" }}</h3>
+
+</div>
+</body>
+</html>
+
+
+{% endblock %}

@@ -1,0 +1,28 @@
+{% extends 'first_app/base.html' %}
+{% block body %}
+
+
+
+<div class="container container mt-4 mb-5">
+    <hr class="bg-dark mb-4 w-25">
+
+    {% if registered %}
+        <h2 class="display-4 text-center">Thank You For Registering</h2>
+    {% else %}
+        <h2 class="display-4 text-center">User Registration</h2>
+        <h3 class="display-4 text-center">Fill the Form</h3>
+
+
+          <form class="form-horizontal" method="post" enctype="multipart/form-data">
+            {{ user_form.as_p }}
+            {{ profile_form.as_p }}
+              {% csrf_token %}
+              <input type="submit" class="btn btn-primary" name="submit" value="Submit">
+          </form>
+    {% endif %}
+</div>
+
+
+
+
+{% endblock %}
